@@ -1,0 +1,174 @@
+:root {
+    --bg: #080808;
+    --sidebar: #101010;
+    --surface: #171717;
+    --surface-hover: #222222;
+    --primary: #FF8A1F;
+    --primary-hover: #FFA24D;
+    --accent: #FFD43B;
+    --text: #F5F5F5;
+    --muted: #9A9A9A;
+    --border: #292929;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #FFFDF7;
+        --sidebar: #F5F1E6;
+        --surface: #FFFFFF;
+        --surface-hover: #F7F3EA;
+        --primary: #F47A16;
+        --primary-hover: #D96108;
+        --accent: #D99A00;
+        --text: #181818;
+        --muted: #707070;
+        --border: #E3DED2;
+    }
+}
+
+.stApp {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+.main .block-container {
+    max-width: 1100px;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+[data-testid="stSidebar"] {
+    background: var(--sidebar) !important;
+    border-right: 1px solid var(--border);
+}
+
+[data-testid="stSidebar"] > div:first-child {
+    background: var(--sidebar) !important;
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: var(--text) !important;
+}
+
+h1, h2, h3 {
+    color: var(--text) !important;
+}
+
+h1 {
+    font-weight: 700 !important;
+    letter-spacing: -0.03em;
+}
+
+p {
+    color: var(--text);
+}
+
+[data-testid="stCaptionContainer"] {
+    color: var(--muted) !important;
+}
+
+.stButton > button {
+    width: 100%;
+    background: transparent !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 12px !important;
+    padding: 0.65rem 1rem !important;
+    transition: background 0.2s ease, border 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.stButton > button:hover {
+    background: var(--surface-hover) !important;
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+    transform: translateY(-1px);
+}
+
+[data-testid="stSidebar"] .stButton:first-of-type button {
+    background: var(--primary) !important;
+    color: #000000 !important;
+    border: none !important;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(255, 138, 31, 0.18);
+}
+
+[data-testid="stSidebar"] .stButton:first-of-type button:hover {
+    background: var(--primary-hover) !important;
+    color: #000000 !important;
+    box-shadow: 0 8px 25px rgba(255, 138, 31, 0.28);
+}
+
+[data-testid="stChatMessage"] {
+    border-radius: 16px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.75rem;
+    transition: background 0.2s ease;
+}
+
+[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) {
+    background: var(--surface) !important;
+}
+
+[data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]) {
+    background: transparent !important;
+}
+
+[data-testid="stChatInput"] {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+[data-testid="stChatInput"] textarea {
+    background: transparent !important;
+    color: var(--text) !important;
+}
+
+[data-testid="stChatInput"] textarea::placeholder {
+    color: var(--muted) !important;
+}
+
+[data-testid="stChatInput"]:focus-within {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 1px var(--primary), 0 8px 30px rgba(255, 138, 31, 0.12);
+}
+
+hr {
+    border-color: var(--border) !important;
+    opacity: 0.7;
+}
+
+[data-testid="stSidebar"] .stButton > button {
+    text-align: left !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+[data-testid="stSidebar"]::before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    margin: -1rem -1rem 1.5rem -1rem;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
